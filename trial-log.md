@@ -83,3 +83,17 @@
 - Re-commit + push, re-bundle as v2, re-check; expected 13/1
   (only `thinking_priced` still failing until the coordinator re-bundles
   with usage rows).
+
+## v2 results (real numbers, 25 Nov 02:00–02:01 WITA)
+
+- Commit v2 `5ab407f66f91a4cf9edfebc5a45998801be21479`, pushed; ls-remote
+  HEAD = same SHA.
+- Bundle v2: 172,070 bytes, sha256
+  `775691068d95ba06ff21b3d16271f374f31755661a5bde75954417e36b443fbb`.
+  Still 0 usage rows attached (session still running — expected).
+- Check v2: **13 passed, 1 failed, 5 skipped** — reproduces 96.8%
+  (92 of 95 counted lines authored, 0 pasted). `thinking_revised` now
+  PASSES (trial-log.md from 2 messages). Only `thinking_priced` fails
+  (0 usage rows) — needs the coordinator's re-bundle with `--muse-usage`
+  after this run ends, then re-check to 14/0 before submit.
+- Final text unchanged: `3am. I quit. Freezer's colder anyway.` (37 chars).
